@@ -1,0 +1,15 @@
+﻿@model TodoListViewModel
+@{
+    ViewData["Title"] = "Todo List";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <ul>
+        @foreach (TodoListItem item in Model.List)
+        {
+            <li>@item.Text</li>
+        }
+    </ul>
+</div>
