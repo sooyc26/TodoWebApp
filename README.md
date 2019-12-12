@@ -9,6 +9,7 @@ This project is a simple ASP.NET Core MVC web application that displays a list o
 - Add functionality to the web app so users can edit and save the todo list item text. Upon saving an item's text, the request should redirect back to the newly-updated list.
 - Add one field to the TodoListItem class to indicate if and when the item was edited. Display this field on the view of the item list if it has been edited.
 - Bonus task: refactor the TodoController class to use Dependency Injection to get an instance of the TodoListService class. Hint: part of the work necessary is already done for you in Startup.cs.
+- Bonus task: if you complete the above tasks quickly, feel free to implement an additional feature of your choice that you feel improves the app.
 - After these changes are implemented, your project should look and behave similarly to the website at: http://todo.pilatesanytime.com/
 - Commit your changes with a descriptive message. `git commit ...`
 - Push your changes to GitHub. `git push`
