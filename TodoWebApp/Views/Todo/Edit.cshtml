@@ -1,0 +1,18 @@
+﻿@model TodoListItem
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit Item Text</h2>
+
+@using (Html.BeginForm("Edit", "Todo", FormMethod.Post))
+{
+    <div class="form-group">
+    @Html.TextBoxFor(model => model.Text, new {Class = "form-control"})
+
+    </div>
+    <hr />
+    <button class="btn btn-primary"type="submit">Save</button>
+    <a class="btn" id="cancel" href="/">Cancel</a>
+}
+

@@ -9,7 +9,18 @@
     <ul>
         @foreach (TodoListItem item in Model.List)
         {
-            <li>@item.Text</li>
+        <li>
+            <a href="/Todo/Edit/@item.Id">@item.Text</a>
+            @if (item.IsEdited)
+            {
+                <text>(edited </text>
+                
+                @item.EditDate
+                
+                <text>)</text>
+
+            }
+        </li>
         }
     </ul>
 </div>
