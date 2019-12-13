@@ -27,17 +27,6 @@ namespace TodoWebApp
                 new TodoListItem { Id = 4, Text = "Wash the car" },
                 new TodoListItem { Id = 5, Text = "Complete dotnet core assignment" }
             };
-            if (timeCounter <= timeCounter.AddMinutes(1)) ResetList();
-        }
-        private void ResetList()
-        {
-            _items = new List<TodoListItem> {
-                new TodoListItem { Id = 1, Text = "Take out the trash" },
-                new TodoListItem { Id = 2, Text = "Do the dishes" },
-                new TodoListItem { Id = 3, Text = "Shop for holiday gifts" },
-                new TodoListItem { Id = 4, Text = "Wash the car" },
-                new TodoListItem { Id = 5, Text = "Complete dotnet core assignment" }
-            };
         }
 
         /// <summary>

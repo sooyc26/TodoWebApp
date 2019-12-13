@@ -20,8 +20,7 @@ namespace TodoWebApp.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var model = new TodoListViewModel { List = _todoListService.GetList() };
-
+            var model = GetList();
             return View(model);
         }
 
@@ -36,10 +35,14 @@ namespace TodoWebApp.Controllers
         public IActionResult Edit(TodoListItem item)
         {
             _todoListService.EditText(item.Id, item.Text);
-            var model = new TodoListViewModel { List = _todoListService.GetList() };
 
-            return View("Index", model);
+            var model = GetList();
+            return RedirectToAction("Index", model);
+        }
 
+        private TodoListViewModel GetList()
+        {
+            return new TodoListViewModel { List = _todoListService.GetList() };
         }
     }
 }
