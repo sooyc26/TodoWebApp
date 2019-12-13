@@ -23,7 +23,5 @@ namespace TodoWebApp.Models
                 edited = value;
             }
         }
-
-        public string check { get; set; }
     }
 }

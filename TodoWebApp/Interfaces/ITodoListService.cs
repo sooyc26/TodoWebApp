@@ -10,6 +10,6 @@ namespace TodoWebApp.Interfaces
     {
         List<TodoListItem> GetList();
         TodoListItem GetItem(int id);
-        bool EditText(int id, string text);
+        void EditText(int id, string text);
     }
 }

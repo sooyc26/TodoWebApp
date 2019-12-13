@@ -24,15 +24,18 @@ namespace TodoWebApp
                 new TodoListItem { Id = 5, Text = "Complete dotnet core assignment" }
             };
 
+            //ResetItems() executed after every 30min.
             var ResetTimer = new Timer(e =>
              {
                  ResetItems();
-             },null, TimeSpan.Zero, TimeSpan.FromMinutes(30));
+             }, null, TimeSpan.Zero, TimeSpan.FromMinutes(30));
         }
 
+        /// <summary>
+        /// Reset _items to original values
+        /// </summary>
         private void ResetItems()
         {
-            //_items[0].check = DateTime.Now.ToString("h:mm:ss.fff");
             _items = new List<TodoListItem> {
                 new TodoListItem { Id = 1, Text = "Take out the trash" },
                 new TodoListItem { Id = 2, Text = "Do the dishes" },
@@ -41,6 +44,7 @@ namespace TodoWebApp
                 new TodoListItem { Id = 5, Text = "Complete dotnet core assignment" }
             };
         }
+
         /// <summary>
         /// Returns the list of items stored in memory.
         /// </summary>
@@ -57,7 +61,7 @@ namespace TodoWebApp
         /// <summary>
         /// Edit TodoListItem from list.
         /// </summary>
-        public bool EditText(int id, string text)
+        public void EditText(int id, string text)
         {
             foreach( var item in _items)
             {
@@ -67,10 +71,9 @@ namespace TodoWebApp
                     item.IsEdited = true;               
                     item.EditDate = DateTime.UtcNow;    //set time of edit
 
-                    return true;
+                    return;
                 }
             }
-            return false;
         }
     }
 }
