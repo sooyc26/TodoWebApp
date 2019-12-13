@@ -9,7 +9,21 @@ namespace TodoWebApp.Models
     {
         public int Id { get; set; }
         public string Text { get; set; }
-        public bool IsEdited { get; set; }
-        public DateTime EditDate { get; set; }
+        public DateTime EditDate { get; set; }  //private date created by auto property
+
+        private bool edited;  //boolean edited field
+        public bool IsEdited
+        {
+            get
+            {
+                return edited;
+            }
+            set
+            {
+                edited = value;
+            }
+        }
+
+        public string check { get; set; }
     }
 }
